@@ -12,7 +12,7 @@ function filter(req,res,next) {
 	try {
 
   		var queryParam = req.query;
-  		sql = `SELECT * FROM ride_info WHERE departure = '${queryParam.departure}' AND destination = '${queryParam.destination}' AND date = '${queryParam.date}';`;
+  		sql = `SELECT * FROM ride WHERE departure = '${queryParam.departure}' AND destination = '${queryParam.destination}' AND date = '${queryParam.date}';`;
 		connection.query(sql,function(err,result,fields) {
 			if (err) {throw err;}
 			res.status(200).send(result);
